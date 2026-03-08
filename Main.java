@@ -1,14 +1,22 @@
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        stage.setTitle("Login Form");
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static void main(String[] args) {
-        Customer m1 = new Customer();
-        MenuItem m2 = new MenuItem(1);
-        Restaurant m3 = new Restaurant();
-        Order m4 = new Order();
-        OrderItem m5 = new OrderItem(null);
-        Payment m6 = new Payment(1001);
-        DeliveryRider d7 = new DeliveryRider(01);
-        System.out.println("d1");
+        launch();
     }
 }
